@@ -1,0 +1,1 @@
+var json_Captao_9 = {"type":"FeatureCollection","name":"Captao_9","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":"1","nome":"CAPTAÇÃO"},"geometry":{"type":"Point","coordinates":[-38.92577502747708,-5.335216998793664]}}]}
