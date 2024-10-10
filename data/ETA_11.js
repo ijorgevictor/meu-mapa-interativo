@@ -1,1 +1,0 @@
-var json_ETA_11 = {"type":"FeatureCollection","name":"ETA_11","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"Id":"0","STATUS_ETA":"ETA Planejada"},"geometry":{"type":"Point","coordinates":[-38.908021535958667,-5.341549937054358]}}]}

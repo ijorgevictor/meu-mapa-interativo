@@ -40,22 +40,15 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Limitemunicipal_0.js"></script>
-        <script src="data/Munic_Sist_BanabuiuSertaoCentral_limites2019_1.js"></script>
-        <script src="data/Rios_2.js"></script>
-        <script src="data/Audes_3.js"></script>
-        <script src="data/A_Banabuiu_4.js"></script>
-        <script src="data/DelimitaourbanaSedes_5.js"></script>
-        <script src="data/Rodovias_6.js"></script>
-        <script src="data/ADUTORAS_SECAO1copiar_7.js"></script>
-        <script src="data/ADUTORAS_SECAO1_8.js"></script>
-        <script src="data/Captao_9.js"></script>
-        <script src="data/Obras_10.js"></script>
-        <script src="data/ETA_11.js"></script>
-        <script src="data/desvios_12.js"></script>
-        <script src="data/ETA_banabuiu_pol_20ha_13.js"></script>
-        <script src="data/SedesMunicipais_14.js"></script>
-        <script src="data/Sedesdistritais_15.js"></script>
+        <script src="data/Munic_Sist_BanabuiuSertaoCentral_limites2019_0.js"></script>
+        <script src="data/A_Banabuiu_1.js"></script>
+        <script src="data/ADUTORAS_SECAO1copiar_2.js"></script>
+        <script src="data/ADUTORAS_SECAO1_3.js"></script>
+        <script src="data/Captao_4.js"></script>
+        <script src="data/Obras_5.js"></script>
+        <script src="data/ETA_6.js"></script>
+        <script src="data/desvios_7.js"></script>
+        <script src="data/ETA_banabuiu_pol_20ha_8.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -75,7 +68,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-6.235221239893007,-39.96287651014455],[-4.895374145311764,-38.071335376299764]]);
+        }).fitBounds([[-6.193272428742185,-39.616393712257945],[-5.062622466848073,-38.02051907309715]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -124,7 +117,7 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        function pop_Limitemunicipal_0(feature, layer) {
+        function pop_Munic_Sist_BanabuiuSertaoCentral_limites2019_0(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -166,80 +159,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Limitemunicipal_0_0() {
+        function style_Munic_Sist_BanabuiuSertaoCentral_limites2019_0_0() {
             return {
-                pane: 'pane_Limitemunicipal_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,255,255,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Limitemunicipal_0');
-        map.getPane('pane_Limitemunicipal_0').style.zIndex = 400;
-        map.getPane('pane_Limitemunicipal_0').style['mix-blend-mode'] = 'normal';
-        var layer_Limitemunicipal_0 = new L.geoJson(json_Limitemunicipal_0, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Limitemunicipal_0',
-            layerName: 'layer_Limitemunicipal_0',
-            pane: 'pane_Limitemunicipal_0',
-            onEachFeature: pop_Limitemunicipal_0,
-            style: style_Limitemunicipal_0_0,
-        });
-        bounds_group.addLayer(layer_Limitemunicipal_0);
-        map.addLayer(layer_Limitemunicipal_0);
-        function pop_Munic_Sist_BanabuiuSertaoCentral_limites2019_1(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Municipio'] !== null ? autolinker.link(feature.properties['Municipio'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ano_cria'] !== null ? autolinker.link(feature.properties['ano_cria'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['regiao'] !== null ? autolinker.link(feature.properties['regiao'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['area_km2'] !== null ? autolinker.link(feature.properties['area_km2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['codigo_ibg'] !== null ? autolinker.link(feature.properties['codigo_ibg'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Munic_Sist_BanabuiuSertaoCentral_limites2019_1_0() {
-            return {
-                pane: 'pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_1',
+                pane: 'pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_0',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -252,158 +174,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_1');
-        map.getPane('pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_1').style.zIndex = 401;
-        map.getPane('pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_1').style['mix-blend-mode'] = 'normal';
-        var layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1 = new L.geoJson(json_Munic_Sist_BanabuiuSertaoCentral_limites2019_1, {
+        map.createPane('pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_0');
+        map.getPane('pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_0').style.zIndex = 400;
+        map.getPane('pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_0').style['mix-blend-mode'] = 'normal';
+        var layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0 = new L.geoJson(json_Munic_Sist_BanabuiuSertaoCentral_limites2019_0, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Munic_Sist_BanabuiuSertaoCentral_limites2019_1',
-            layerName: 'layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1',
-            pane: 'pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_1',
-            onEachFeature: pop_Munic_Sist_BanabuiuSertaoCentral_limites2019_1,
-            style: style_Munic_Sist_BanabuiuSertaoCentral_limites2019_1_0,
+            dataVar: 'json_Munic_Sist_BanabuiuSertaoCentral_limites2019_0',
+            layerName: 'layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0',
+            pane: 'pane_Munic_Sist_BanabuiuSertaoCentral_limites2019_0',
+            onEachFeature: pop_Munic_Sist_BanabuiuSertaoCentral_limites2019_0,
+            style: style_Munic_Sist_BanabuiuSertaoCentral_limites2019_0_0,
         });
-        bounds_group.addLayer(layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1);
-        map.addLayer(layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1);
-        function pop_Rios_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Toponimia_'] !== null ? autolinker.link(feature.properties['Toponimia_'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Extensao'] !== null ? autolinker.link(feature.properties['Extensao'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Rios_2_0() {
-            return {
-                pane: 'pane_Rios_2',
-                opacity: 1,
-                color: 'rgba(72,138,231,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Rios_2');
-        map.getPane('pane_Rios_2').style.zIndex = 402;
-        map.getPane('pane_Rios_2').style['mix-blend-mode'] = 'normal';
-        var layer_Rios_2 = new L.geoJson(json_Rios_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Rios_2',
-            layerName: 'layer_Rios_2',
-            pane: 'pane_Rios_2',
-            onEachFeature: pop_Rios_2,
-            style: style_Rios_2_0,
-        });
-        bounds_group.addLayer(layer_Rios_2);
-        map.addLayer(layer_Rios_2);
-        function pop_Audes_3(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['TOPONIMIA'] !== null ? autolinker.link(feature.properties['TOPONIMIA'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['AreaSqKm'] !== null ? autolinker.link(feature.properties['AreaSqKm'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ID_SRH'] !== null ? autolinker.link(feature.properties['ID_SRH'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Situacao'] !== null ? autolinker.link(feature.properties['Situacao'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Hectares'] !== null ? autolinker.link(feature.properties['Hectares'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Perimeter'] !== null ? autolinker.link(feature.properties['Perimeter'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Audes_3_0() {
-            return {
-                pane: 'pane_Audes_3',
-                opacity: 1,
-                color: 'rgba(4,86,240,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(177,251,255,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Audes_3');
-        map.getPane('pane_Audes_3').style.zIndex = 403;
-        map.getPane('pane_Audes_3').style['mix-blend-mode'] = 'normal';
-        var layer_Audes_3 = new L.geoJson(json_Audes_3, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Audes_3',
-            layerName: 'layer_Audes_3',
-            pane: 'pane_Audes_3',
-            onEachFeature: pop_Audes_3,
-            style: style_Audes_3_0,
-        });
-        bounds_group.addLayer(layer_Audes_3);
-        map.addLayer(layer_Audes_3);
-        function pop_A_Banabuiu_4(feature, layer) {
+        bounds_group.addLayer(layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0);
+        map.addLayer(layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0);
+        function pop_A_Banabuiu_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -439,9 +224,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_A_Banabuiu_4_0() {
+        function style_A_Banabuiu_1_0() {
             return {
-                pane: 'pane_A_Banabuiu_4',
+                pane: 'pane_A_Banabuiu_1',
                 opacity: 1,
                 color: 'rgba(1,18,255,1.0)',
                 dashArray: '',
@@ -454,170 +239,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_A_Banabuiu_4');
-        map.getPane('pane_A_Banabuiu_4').style.zIndex = 404;
-        map.getPane('pane_A_Banabuiu_4').style['mix-blend-mode'] = 'normal';
-        var layer_A_Banabuiu_4 = new L.geoJson(json_A_Banabuiu_4, {
+        map.createPane('pane_A_Banabuiu_1');
+        map.getPane('pane_A_Banabuiu_1').style.zIndex = 401;
+        map.getPane('pane_A_Banabuiu_1').style['mix-blend-mode'] = 'normal';
+        var layer_A_Banabuiu_1 = new L.geoJson(json_A_Banabuiu_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_A_Banabuiu_4',
-            layerName: 'layer_A_Banabuiu_4',
-            pane: 'pane_A_Banabuiu_4',
-            onEachFeature: pop_A_Banabuiu_4,
-            style: style_A_Banabuiu_4_0,
+            dataVar: 'json_A_Banabuiu_1',
+            layerName: 'layer_A_Banabuiu_1',
+            pane: 'pane_A_Banabuiu_1',
+            onEachFeature: pop_A_Banabuiu_1,
+            style: style_A_Banabuiu_1_0,
         });
-        bounds_group.addLayer(layer_A_Banabuiu_4);
-        map.addLayer(layer_A_Banabuiu_4);
-        function pop_DelimitaourbanaSedes_5(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Layer'] !== null ? autolinker.link(feature.properties['Layer'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['PaperSpace'] !== null ? autolinker.link(feature.properties['PaperSpace'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SubClasses'] !== null ? autolinker.link(feature.properties['SubClasses'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Linetype'] !== null ? autolinker.link(feature.properties['Linetype'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['EntityHand'] !== null ? autolinker.link(feature.properties['EntityHand'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Text'] !== null ? autolinker.link(feature.properties['Text'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_DelimitaourbanaSedes_5_0() {
-            return {
-                pane: 'pane_DelimitaourbanaSedes_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(195,63,171,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_DelimitaourbanaSedes_5');
-        map.getPane('pane_DelimitaourbanaSedes_5').style.zIndex = 405;
-        map.getPane('pane_DelimitaourbanaSedes_5').style['mix-blend-mode'] = 'normal';
-        var layer_DelimitaourbanaSedes_5 = new L.geoJson(json_DelimitaourbanaSedes_5, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_DelimitaourbanaSedes_5',
-            layerName: 'layer_DelimitaourbanaSedes_5',
-            pane: 'pane_DelimitaourbanaSedes_5',
-            onEachFeature: pop_DelimitaourbanaSedes_5,
-            style: style_DelimitaourbanaSedes_5_0,
-        });
-        bounds_group.addLayer(layer_DelimitaourbanaSedes_5);
-        map.addLayer(layer_DelimitaourbanaSedes_5);
-        function pop_Rodovias_6(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SRE'] !== null ? autolinker.link(feature.properties['SRE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['EXTENSAO'] !== null ? autolinker.link(feature.properties['EXTENSAO'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['EXT_GEO'] !== null ? autolinker.link(feature.properties['EXT_GEO'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X'] !== null ? autolinker.link(feature.properties['X'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Y'] !== null ? autolinker.link(feature.properties['Y'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Z'] !== null ? autolinker.link(feature.properties['Z'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ID_SRE'] !== null ? autolinker.link(feature.properties['ID_SRE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Rodovias_6_0() {
-            return {
-                pane: 'pane_Rodovias_6',
-                opacity: 1,
-                color: 'rgba(255,1,26,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Rodovias_6');
-        map.getPane('pane_Rodovias_6').style.zIndex = 406;
-        map.getPane('pane_Rodovias_6').style['mix-blend-mode'] = 'normal';
-        var layer_Rodovias_6 = new L.geoJson(json_Rodovias_6, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Rodovias_6',
-            layerName: 'layer_Rodovias_6',
-            pane: 'pane_Rodovias_6',
-            onEachFeature: pop_Rodovias_6,
-            style: style_Rodovias_6_0,
-        });
-        bounds_group.addLayer(layer_Rodovias_6);
-        map.addLayer(layer_Rodovias_6);
-        function pop_ADUTORAS_SECAO1copiar_7(feature, layer) {
+        bounds_group.addLayer(layer_A_Banabuiu_1);
+        map.addLayer(layer_A_Banabuiu_1);
+        function pop_ADUTORAS_SECAO1copiar_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -668,13 +304,13 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ADUTORAS_SECAO1copiar_7_0(feature) {
+        function style_ADUTORAS_SECAO1copiar_2_0(feature) {
             switch(String(feature.properties['TUBOS'])) {
                 case 'ADQUIRIDO':
                     return {
-                pane: 'pane_ADUTORAS_SECAO1copiar_7',
+                pane: 'pane_ADUTORAS_SECAO1copiar_2',
                 opacity: 1,
-                color: 'rgba(255,0,4,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -685,9 +321,9 @@
                     break;
                 case 'A ADQUIRIR':
                     return {
-                pane: 'pane_ADUTORAS_SECAO1copiar_7',
+                pane: 'pane_ADUTORAS_SECAO1copiar_2',
                 opacity: 1,
-                color: 'rgba(152,152,152,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -698,7 +334,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_ADUTORAS_SECAO1copiar_7',
+                pane: 'pane_ADUTORAS_SECAO1copiar_2',
                 opacity: 1,
                 color: 'rgba(96,103,234,1.0)',
                 dashArray: '',
@@ -711,21 +347,21 @@
                     break;
             }
         }
-        map.createPane('pane_ADUTORAS_SECAO1copiar_7');
-        map.getPane('pane_ADUTORAS_SECAO1copiar_7').style.zIndex = 407;
-        map.getPane('pane_ADUTORAS_SECAO1copiar_7').style['mix-blend-mode'] = 'normal';
-        var layer_ADUTORAS_SECAO1copiar_7 = new L.geoJson(json_ADUTORAS_SECAO1copiar_7, {
+        map.createPane('pane_ADUTORAS_SECAO1copiar_2');
+        map.getPane('pane_ADUTORAS_SECAO1copiar_2').style.zIndex = 402;
+        map.getPane('pane_ADUTORAS_SECAO1copiar_2').style['mix-blend-mode'] = 'normal';
+        var layer_ADUTORAS_SECAO1copiar_2 = new L.geoJson(json_ADUTORAS_SECAO1copiar_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ADUTORAS_SECAO1copiar_7',
-            layerName: 'layer_ADUTORAS_SECAO1copiar_7',
-            pane: 'pane_ADUTORAS_SECAO1copiar_7',
-            onEachFeature: pop_ADUTORAS_SECAO1copiar_7,
-            style: style_ADUTORAS_SECAO1copiar_7_0,
+            dataVar: 'json_ADUTORAS_SECAO1copiar_2',
+            layerName: 'layer_ADUTORAS_SECAO1copiar_2',
+            pane: 'pane_ADUTORAS_SECAO1copiar_2',
+            onEachFeature: pop_ADUTORAS_SECAO1copiar_2,
+            style: style_ADUTORAS_SECAO1copiar_2_0,
         });
-        bounds_group.addLayer(layer_ADUTORAS_SECAO1copiar_7);
-        map.addLayer(layer_ADUTORAS_SECAO1copiar_7);
-        function pop_ADUTORAS_SECAO1_8(feature, layer) {
+        bounds_group.addLayer(layer_ADUTORAS_SECAO1copiar_2);
+        map.addLayer(layer_ADUTORAS_SECAO1copiar_2);
+        function pop_ADUTORAS_SECAO1_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -776,13 +412,13 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ADUTORAS_SECAO1_8_0(feature) {
+        function style_ADUTORAS_SECAO1_3_0(feature) {
             switch(String(feature.properties['PROGRESSO'])) {
                 case 'REATERRO':
                     return {
-                pane: 'pane_ADUTORAS_SECAO1_8',
+                pane: 'pane_ADUTORAS_SECAO1_3',
                 opacity: 1,
-                color: 'rgba(255,153,1,1.0)',
+                color: 'rgba(84,176,74,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -793,7 +429,7 @@
                     break;
                 case 'ASSENTAMENTO':
                     return {
-                pane: 'pane_ADUTORAS_SECAO1_8',
+                pane: 'pane_ADUTORAS_SECAO1_3',
                 opacity: 1,
                 color: 'rgba(255,230,1,1.0)',
                 dashArray: '',
@@ -806,7 +442,7 @@
                     break;
                 case 'ESCAVACAO':
                     return {
-                pane: 'pane_ADUTORAS_SECAO1_8',
+                pane: 'pane_ADUTORAS_SECAO1_3',
                 opacity: 1,
                 color: 'rgba(1,255,31,1.0)',
                 dashArray: '',
@@ -819,7 +455,7 @@
                     break;
                 case 'LIMPEZA':
                     return {
-                pane: 'pane_ADUTORAS_SECAO1_8',
+                pane: 'pane_ADUTORAS_SECAO1_3',
                 opacity: 1,
                 color: 'rgba(66,61,215,1.0)',
                 dashArray: '',
@@ -832,7 +468,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_ADUTORAS_SECAO1_8',
+                pane: 'pane_ADUTORAS_SECAO1_3',
                 opacity: 1,
                 color: 'rgba(104,226,136,1.0)',
                 dashArray: '',
@@ -845,7 +481,7 @@
                     break;
                 case 'TESTE':
                     return {
-                pane: 'pane_ADUTORAS_SECAO1_8',
+                pane: 'pane_ADUTORAS_SECAO1_3',
                 opacity: 1,
                 color: 'rgba(255,106,108,1.0)',
                 dashArray: '',
@@ -858,21 +494,21 @@
                     break;
             }
         }
-        map.createPane('pane_ADUTORAS_SECAO1_8');
-        map.getPane('pane_ADUTORAS_SECAO1_8').style.zIndex = 408;
-        map.getPane('pane_ADUTORAS_SECAO1_8').style['mix-blend-mode'] = 'normal';
-        var layer_ADUTORAS_SECAO1_8 = new L.geoJson(json_ADUTORAS_SECAO1_8, {
+        map.createPane('pane_ADUTORAS_SECAO1_3');
+        map.getPane('pane_ADUTORAS_SECAO1_3').style.zIndex = 403;
+        map.getPane('pane_ADUTORAS_SECAO1_3').style['mix-blend-mode'] = 'normal';
+        var layer_ADUTORAS_SECAO1_3 = new L.geoJson(json_ADUTORAS_SECAO1_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ADUTORAS_SECAO1_8',
-            layerName: 'layer_ADUTORAS_SECAO1_8',
-            pane: 'pane_ADUTORAS_SECAO1_8',
-            onEachFeature: pop_ADUTORAS_SECAO1_8,
-            style: style_ADUTORAS_SECAO1_8_0,
+            dataVar: 'json_ADUTORAS_SECAO1_3',
+            layerName: 'layer_ADUTORAS_SECAO1_3',
+            pane: 'pane_ADUTORAS_SECAO1_3',
+            onEachFeature: pop_ADUTORAS_SECAO1_3,
+            style: style_ADUTORAS_SECAO1_3_0,
         });
-        bounds_group.addLayer(layer_ADUTORAS_SECAO1_8);
-        map.addLayer(layer_ADUTORAS_SECAO1_8);
-        function pop_Captao_9(feature, layer) {
+        bounds_group.addLayer(layer_ADUTORAS_SECAO1_3);
+        map.addLayer(layer_ADUTORAS_SECAO1_3);
+        function pop_Captao_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -905,9 +541,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Captao_9_0() {
+        function style_Captao_4_0() {
             return {
-                pane: 'pane_Captao_9',
+                pane: 'pane_Captao_4',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -921,27 +557,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Captao_9');
-        map.getPane('pane_Captao_9').style.zIndex = 409;
-        map.getPane('pane_Captao_9').style['mix-blend-mode'] = 'normal';
-        var layer_Captao_9 = new L.geoJson(json_Captao_9, {
+        map.createPane('pane_Captao_4');
+        map.getPane('pane_Captao_4').style.zIndex = 404;
+        map.getPane('pane_Captao_4').style['mix-blend-mode'] = 'normal';
+        var layer_Captao_4 = new L.geoJson(json_Captao_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Captao_9',
-            layerName: 'layer_Captao_9',
-            pane: 'pane_Captao_9',
-            onEachFeature: pop_Captao_9,
+            dataVar: 'json_Captao_4',
+            layerName: 'layer_Captao_4',
+            pane: 'pane_Captao_4',
+            onEachFeature: pop_Captao_4,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Captao_9_0(feature));
+                return L.circleMarker(latlng, style_Captao_4_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Captao_9);
-        map.addLayer(layer_Captao_9);
-        function pop_Obras_10(feature, layer) {
+        bounds_group.addLayer(layer_Captao_4);
+        map.addLayer(layer_Captao_4);
+        function pop_Obras_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -1001,9 +637,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Obras_10_0() {
+        function style_Obras_5_0() {
             return {
-                pane: 'pane_Obras_10',
+                pane: 'pane_Obras_5',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1017,9 +653,9 @@
                 interactive: true,
             }
         }
-        function style_Obras_10_1() {
+        function style_Obras_5_1() {
             return {
-                pane: 'pane_Obras_10',
+                pane: 'pane_Obras_5',
                 radius: 3.0,
                 opacity: 1,
                 color: 'rgba(164,164,164,1.0)',
@@ -1033,33 +669,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Obras_10');
-        map.getPane('pane_Obras_10').style.zIndex = 410;
-        map.getPane('pane_Obras_10').style['mix-blend-mode'] = 'normal';
-        var layer_Obras_10 = new L.geoJson.multiStyle(json_Obras_10, {
+        map.createPane('pane_Obras_5');
+        map.getPane('pane_Obras_5').style.zIndex = 405;
+        map.getPane('pane_Obras_5').style['mix-blend-mode'] = 'normal';
+        var layer_Obras_5 = new L.geoJson.multiStyle(json_Obras_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Obras_10',
-            layerName: 'layer_Obras_10',
-            pane: 'pane_Obras_10',
-            onEachFeature: pop_Obras_10,
+            dataVar: 'json_Obras_5',
+            layerName: 'layer_Obras_5',
+            pane: 'pane_Obras_5',
+            onEachFeature: pop_Obras_5,
             pointToLayers: [function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Obras_10_0(feature));
+                return L.circleMarker(latlng, style_Obras_5_0(feature));
             },function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Obras_10_1(feature));
+                return L.circleMarker(latlng, style_Obras_5_1(feature));
             },
         ]});
-        bounds_group.addLayer(layer_Obras_10);
-        map.addLayer(layer_Obras_10);
-        function pop_ETA_11(feature, layer) {
+        bounds_group.addLayer(layer_Obras_5);
+        map.addLayer(layer_Obras_5);
+        function pop_ETA_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -1092,33 +728,33 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ETA_11_0() {
+        function style_ETA_6_0() {
             return {
-                pane: 'pane_ETA_11',
+                pane: 'pane_ETA_6',
                 interactive: true,
             }
         }
-        map.createPane('pane_ETA_11');
-        map.getPane('pane_ETA_11').style.zIndex = 411;
-        map.getPane('pane_ETA_11').style['mix-blend-mode'] = 'normal';
-        var layer_ETA_11 = new L.geoJson(json_ETA_11, {
+        map.createPane('pane_ETA_6');
+        map.getPane('pane_ETA_6').style.zIndex = 406;
+        map.getPane('pane_ETA_6').style['mix-blend-mode'] = 'normal';
+        var layer_ETA_6 = new L.geoJson(json_ETA_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ETA_11',
-            layerName: 'layer_ETA_11',
-            pane: 'pane_ETA_11',
-            onEachFeature: pop_ETA_11,
+            dataVar: 'json_ETA_6',
+            layerName: 'layer_ETA_6',
+            pane: 'pane_ETA_6',
+            onEachFeature: pop_ETA_6,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_ETA_11_0(feature));
+                return L.circleMarker(latlng, style_ETA_6_0(feature));
             },
         });
-        bounds_group.addLayer(layer_ETA_11);
-        map.addLayer(layer_ETA_11);
-        function pop_desvios_12(feature, layer) {
+        bounds_group.addLayer(layer_ETA_6);
+        map.addLayer(layer_ETA_6);
+        function pop_desvios_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -1178,9 +814,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_desvios_12_0() {
+        function style_desvios_7_0() {
             return {
-                pane: 'pane_desvios_12',
+                pane: 'pane_desvios_7',
                 radius: 0.8,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1194,27 +830,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_desvios_12');
-        map.getPane('pane_desvios_12').style.zIndex = 412;
-        map.getPane('pane_desvios_12').style['mix-blend-mode'] = 'normal';
-        var layer_desvios_12 = new L.geoJson(json_desvios_12, {
+        map.createPane('pane_desvios_7');
+        map.getPane('pane_desvios_7').style.zIndex = 407;
+        map.getPane('pane_desvios_7').style['mix-blend-mode'] = 'normal';
+        var layer_desvios_7 = new L.geoJson(json_desvios_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_desvios_12',
-            layerName: 'layer_desvios_12',
-            pane: 'pane_desvios_12',
-            onEachFeature: pop_desvios_12,
+            dataVar: 'json_desvios_7',
+            layerName: 'layer_desvios_7',
+            pane: 'pane_desvios_7',
+            onEachFeature: pop_desvios_7,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_desvios_12_0(feature));
+                return L.circleMarker(latlng, style_desvios_7_0(feature));
             },
         });
-        bounds_group.addLayer(layer_desvios_12);
-        map.addLayer(layer_desvios_12);
-        function pop_ETA_banabuiu_pol_20ha_13(feature, layer) {
+        bounds_group.addLayer(layer_desvios_7);
+        map.addLayer(layer_desvios_7);
+        function pop_ETA_banabuiu_pol_20ha_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -1277,9 +913,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ETA_banabuiu_pol_20ha_13_0() {
+        function style_ETA_banabuiu_pol_20ha_8_0() {
             return {
-                pane: 'pane_ETA_banabuiu_pol_20ha_13',
+                pane: 'pane_ETA_banabuiu_pol_20ha_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1292,233 +928,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_ETA_banabuiu_pol_20ha_13');
-        map.getPane('pane_ETA_banabuiu_pol_20ha_13').style.zIndex = 413;
-        map.getPane('pane_ETA_banabuiu_pol_20ha_13').style['mix-blend-mode'] = 'normal';
-        var layer_ETA_banabuiu_pol_20ha_13 = new L.geoJson(json_ETA_banabuiu_pol_20ha_13, {
+        map.createPane('pane_ETA_banabuiu_pol_20ha_8');
+        map.getPane('pane_ETA_banabuiu_pol_20ha_8').style.zIndex = 408;
+        map.getPane('pane_ETA_banabuiu_pol_20ha_8').style['mix-blend-mode'] = 'normal';
+        var layer_ETA_banabuiu_pol_20ha_8 = new L.geoJson(json_ETA_banabuiu_pol_20ha_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ETA_banabuiu_pol_20ha_13',
-            layerName: 'layer_ETA_banabuiu_pol_20ha_13',
-            pane: 'pane_ETA_banabuiu_pol_20ha_13',
-            onEachFeature: pop_ETA_banabuiu_pol_20ha_13,
-            style: style_ETA_banabuiu_pol_20ha_13_0,
+            dataVar: 'json_ETA_banabuiu_pol_20ha_8',
+            layerName: 'layer_ETA_banabuiu_pol_20ha_8',
+            pane: 'pane_ETA_banabuiu_pol_20ha_8',
+            onEachFeature: pop_ETA_banabuiu_pol_20ha_8,
+            style: style_ETA_banabuiu_pol_20ha_8_0,
         });
-        bounds_group.addLayer(layer_ETA_banabuiu_pol_20ha_13);
-        map.addLayer(layer_ETA_banabuiu_pol_20ha_13);
-        function pop_SedesMunicipais_14(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['DIST_ACENT'] !== null ? autolinker.link(feature.properties['DIST_ACENT'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['IBGE'] !== null ? autolinker.link(feature.properties['IBGE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(feature.properties['MUNICIPIO'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SEDE'] !== null ? autolinker.link(feature.properties['SEDE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ANO_CRIA'] !== null ? autolinker.link(feature.properties['ANO_CRIA'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['UTM_E'] !== null ? autolinker.link(feature.properties['UTM_E'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['UTM_N'] !== null ? autolinker.link(feature.properties['UTM_N'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_SedesMunicipais_14_0() {
-            return {
-                pane: 'pane_SedesMunicipais_14',
-                radius: 10.0,
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,255,255,1.0)',
-                interactive: true,
-            }
-        }
-        function style_SedesMunicipais_14_1() {
-            return {
-                pane: 'pane_SedesMunicipais_14',
-                radius: 2.8,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(0,0,0,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_SedesMunicipais_14');
-        map.getPane('pane_SedesMunicipais_14').style.zIndex = 414;
-        map.getPane('pane_SedesMunicipais_14').style['mix-blend-mode'] = 'normal';
-        var layer_SedesMunicipais_14 = new L.geoJson.multiStyle(json_SedesMunicipais_14, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_SedesMunicipais_14',
-            layerName: 'layer_SedesMunicipais_14',
-            pane: 'pane_SedesMunicipais_14',
-            onEachFeature: pop_SedesMunicipais_14,
-            pointToLayers: [function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_SedesMunicipais_14_0(feature));
-            },function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_SedesMunicipais_14_1(feature));
-            },
-        ]});
-        bounds_group.addLayer(layer_SedesMunicipais_14);
-        map.addLayer(layer_SedesMunicipais_14);
-        function pop_Sedesdistritais_15(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['CODIGOSE0'] !== null ? autolinker.link(feature.properties['CODIGOSE0'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['DISTRITO1'] !== null ? autolinker.link(feature.properties['DISTRITO1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['IBGE2'] !== null ? autolinker.link(feature.properties['IBGE2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MUNICIPI3'] !== null ? autolinker.link(feature.properties['MUNICIPI3'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ANO4'] !== null ? autolinker.link(feature.properties['ANO4'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Operador'] !== null ? autolinker.link(feature.properties['Operador'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['GESTAO'] !== null ? autolinker.link(feature.properties['GESTAO'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Sedesdistritais_15_0() {
-            return {
-                pane: 'pane_Sedesdistritais_15',
-                shape: 'square',
-                radius: 4.8,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(52,248,22,1.0)',
-                interactive: true,
-            }
-        }
-        function style_Sedesdistritais_15_1() {
-            return {
-                pane: 'pane_Sedesdistritais_15',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(0,0,0,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Sedesdistritais_15');
-        map.getPane('pane_Sedesdistritais_15').style.zIndex = 415;
-        map.getPane('pane_Sedesdistritais_15').style['mix-blend-mode'] = 'normal';
-        var layer_Sedesdistritais_15 = new L.geoJson.multiStyle(json_Sedesdistritais_15, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Sedesdistritais_15',
-            layerName: 'layer_Sedesdistritais_15',
-            pane: 'pane_Sedesdistritais_15',
-            onEachFeature: pop_Sedesdistritais_15,
-            pointToLayers: [function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Sedesdistritais_15_0(feature));
-            },function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Sedesdistritais_15_1(feature));
-            },
-        ]});
-        bounds_group.addLayer(layer_Sedesdistritais_15);
-        map.addLayer(layer_Sedesdistritais_15);
+        bounds_group.addLayer(layer_ETA_banabuiu_pol_20ha_8);
+        map.addLayer(layer_ETA_banabuiu_pol_20ha_8);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -1531,22 +954,15 @@
         .title += 'Search for a place';
         var baseMaps = {};
         var overlaysTree = [
-            {label: '<img src="legend/Sedesdistritais_15.png" /> Sedes distritais', layer: layer_Sedesdistritais_15},
-            {label: '<img src="legend/SedesMunicipais_14.png" /> Sedes Municipais', layer: layer_SedesMunicipais_14},
-            {label: '<img src="legend/ETA_banabuiu_pol_20ha_13.png" /> ETA_banabuiu_pol_20ha', layer: layer_ETA_banabuiu_pol_20ha_13},
-            {label: '<img src="legend/desvios_12.png" /> desvios', layer: layer_desvios_12},
-            {label: '<img src="legend/ETA_11.png" /> ETA', layer: layer_ETA_11},
-            {label: '<img src="legend/Obras_10.png" /> Obras', layer: layer_Obras_10},
-            {label: '<img src="legend/Captao_9.png" /> Captação', layer: layer_Captao_9},
-            {label: 'ADUTORAS_SECAO-1<br /><table><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_8_REATERRO0.png" /></td><td>REATERRO</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_8_ASSENTAMENTO1.png" /></td><td>ASSENTAMENTO</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_8_ESCAVACAO2.png" /></td><td>ESCAVACAO</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_8_LIMPEZA3.png" /></td><td>LIMPEZA</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_8_4.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_8_TESTE5.png" /></td><td>TESTE</td></tr></table>', layer: layer_ADUTORAS_SECAO1_8},
-            {label: 'ADUTORAS_SECAO-1  copiar<br /><table><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1copiar_7_ADQUIRIDO0.png" /></td><td>ADQUIRIDO</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1copiar_7_AADQUIRIR1.png" /></td><td>A ADQUIRIR</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1copiar_7_2.png" /></td><td></td></tr></table>', layer: layer_ADUTORAS_SECAO1copiar_7},
-            {label: '<img src="legend/Rodovias_6.png" /> Rodovias', layer: layer_Rodovias_6},
-            {label: '<img src="legend/DelimitaourbanaSedes_5.png" /> Delimitação urbana - Sedes', layer: layer_DelimitaourbanaSedes_5},
-            {label: '<img src="legend/A_Banabuiu_4.png" /> Aç_Banabuiu', layer: layer_A_Banabuiu_4},
-            {label: '<img src="legend/Audes_3.png" /> Açudes', layer: layer_Audes_3},
-            {label: '<img src="legend/Rios_2.png" /> Rios', layer: layer_Rios_2},
-            {label: '<img src="legend/Munic_Sist_BanabuiuSertaoCentral_limites2019_1.png" /> Munic_Sist_Banabuiu-SertaoCentral_limites2019', layer: layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1},
-            {label: '<img src="legend/Limitemunicipal_0.png" /> Limite municipal', layer: layer_Limitemunicipal_0},]
+            {label: '<img src="legend/ETA_banabuiu_pol_20ha_8.png" /> ETA_banabuiu_pol_20ha', layer: layer_ETA_banabuiu_pol_20ha_8},
+            {label: '<img src="legend/desvios_7.png" /> desvios', layer: layer_desvios_7},
+            {label: '<img src="legend/ETA_6.png" /> ETA', layer: layer_ETA_6},
+            {label: '<img src="legend/Obras_5.png" /> Obras', layer: layer_Obras_5},
+            {label: '<img src="legend/Captao_4.png" /> Captação', layer: layer_Captao_4},
+            {label: 'ADUTORAS_SECAO-1<br /><table><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_3_REATERRO0.png" /></td><td>REATERRO</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_3_ASSENTAMENTO1.png" /></td><td>ASSENTAMENTO</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_3_ESCAVACAO2.png" /></td><td>ESCAVACAO</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_3_LIMPEZA3.png" /></td><td>LIMPEZA</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_3_4.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1_3_TESTE5.png" /></td><td>TESTE</td></tr></table>', layer: layer_ADUTORAS_SECAO1_3},
+            {label: 'ADUTORAS_SECAO-1  copiar<br /><table><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1copiar_2_ADQUIRIDO0.png" /></td><td>ADQUIRIDO</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1copiar_2_AADQUIRIR1.png" /></td><td>A ADQUIRIR</td></tr><tr><td style="text-align: center;"><img src="legend/ADUTORAS_SECAO1copiar_2_2.png" /></td><td></td></tr></table>', layer: layer_ADUTORAS_SECAO1copiar_2},
+            {label: '<img src="legend/A_Banabuiu_1.png" /> Aç_Banabuiu', layer: layer_A_Banabuiu_1},
+            {label: '<img src="legend/Munic_Sist_BanabuiuSertaoCentral_limites2019_0.png" /> Munic_Sist_Banabuiu-SertaoCentral_limites2019', layer: layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -1609,13 +1025,13 @@
         });       
         map.on("zoomend", function(){
 
-                if (map.hasLayer(layer_Obras_10)) {
+                if (map.hasLayer(layer_Obras_5)) {
                     if (map.getZoom() <= 19 && map.getZoom() >= 19) {
-                        layer_Obras_10.eachLayer(function (layer) {
+                        layer_Obras_5.eachLayer(function (layer) {
                             layer.openTooltip();
                         });
                     } else {
-                        layer_Obras_10.eachLayer(function (layer) {
+                        layer_Obras_5.eachLayer(function (layer) {
                             layer.closeTooltip();
                         });
                     }
@@ -1623,12 +1039,12 @@
         });
         setBounds();
         var i = 0;
-        layer_Limitemunicipal_0.eachLayer(function(layer) {
+        layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Municipio'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Municipio']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Limitemunicipal_0'});
+            layer.bindTooltip((layer.feature.properties['Municipio'] !== null?String('<div style="color: #323232; font-size: 15pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Municipio']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Munic_Sist_BanabuiuSertaoCentral_limites2019_0'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1636,12 +1052,12 @@
               i++;
         });
         var i = 0;
-        layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1.eachLayer(function(layer) {
+        layer_Captao_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Municipio'] !== null?String('<div style="color: #323232; font-size: 15pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Municipio']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Munic_Sist_BanabuiuSertaoCentral_limites2019_1'});
+            layer.bindTooltip((layer.feature.properties['nome'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['nome']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Captao_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1649,12 +1065,12 @@
               i++;
         });
         var i = 0;
-        layer_Rios_2.eachLayer(function(layer) {
+        layer_Obras_5.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Toponimia_'] !== null?String('<div style="color: #2da6e3; font-size: 8pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Toponimia_']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Rios_2'});
+            layer.bindTooltip((layer.feature.properties['Obra'] !== null?String('<div style="color: #323232; font-size: 5pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Obra']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Obras_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1662,12 +1078,12 @@
               i++;
         });
         var i = 0;
-        layer_Audes_3.eachLayer(function(layer) {
+        layer_ETA_6.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['TOPONIMIA'] !== null?String('<div style="color: #2d94c7; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['TOPONIMIA']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Audes_3'});
+            layer.bindTooltip((layer.feature.properties['STATUS_ETA'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['STATUS_ETA']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ETA_6'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1675,90 +1091,38 @@
               i++;
         });
         var i = 0;
-        layer_Captao_9.eachLayer(function(layer) {
+        layer_desvios_7.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['nome'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['nome']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Captao_9'});
+            layer.bindTooltip((layer.feature.properties['Obra'] !== null?String('<div style="color: #323232; font-size: 6pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Obra']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_desvios_7'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        var i = 0;
-        layer_Obras_10.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['Obra'] !== null?String('<div style="color: #323232; font-size: 5pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Obra']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Obras_10'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
-        layer_ETA_11.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['STATUS_ETA'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['STATUS_ETA']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ETA_11'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
-        layer_desvios_12.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['Obra'] !== null?String('<div style="color: #323232; font-size: 6pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Obra']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_desvios_12'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
-        layer_Sedesdistritais_15.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['DISTRITO1'] !== null?String('<div style="color: #323232; font-size: 12pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['DISTRITO1']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Sedesdistritais_15'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-                if (map.hasLayer(layer_Obras_10)) {
+                if (map.hasLayer(layer_Obras_5)) {
                     if (map.getZoom() <= 19 && map.getZoom() >= 19) {
-                        layer_Obras_10.eachLayer(function (layer) {
+                        layer_Obras_5.eachLayer(function (layer) {
                             layer.openTooltip();
                         });
                     } else {
-                        layer_Obras_10.eachLayer(function (layer) {
+                        layer_Obras_5.eachLayer(function (layer) {
                             layer.closeTooltip();
                         });
                     }
                 }
-        resetLabels([layer_Limitemunicipal_0,layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1,layer_Rios_2,layer_Audes_3,layer_DelimitaourbanaSedes_5,layer_Rodovias_6,layer_Captao_9,layer_Obras_10,layer_ETA_11,layer_desvios_12,layer_SedesMunicipais_14,layer_Sedesdistritais_15]);
+        resetLabels([layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0,layer_Captao_4,layer_Obras_5,layer_ETA_6,layer_desvios_7]);
         map.on("zoomend", function(){
-            resetLabels([layer_Limitemunicipal_0,layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1,layer_Rios_2,layer_Audes_3,layer_DelimitaourbanaSedes_5,layer_Rodovias_6,layer_Captao_9,layer_Obras_10,layer_ETA_11,layer_desvios_12,layer_SedesMunicipais_14,layer_Sedesdistritais_15]);
+            resetLabels([layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0,layer_Captao_4,layer_Obras_5,layer_ETA_6,layer_desvios_7]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Limitemunicipal_0,layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1,layer_Rios_2,layer_Audes_3,layer_DelimitaourbanaSedes_5,layer_Rodovias_6,layer_Captao_9,layer_Obras_10,layer_ETA_11,layer_desvios_12,layer_SedesMunicipais_14,layer_Sedesdistritais_15]);
+            resetLabels([layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0,layer_Captao_4,layer_Obras_5,layer_ETA_6,layer_desvios_7]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Limitemunicipal_0,layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_1,layer_Rios_2,layer_Audes_3,layer_DelimitaourbanaSedes_5,layer_Rodovias_6,layer_Captao_9,layer_Obras_10,layer_ETA_11,layer_desvios_12,layer_SedesMunicipais_14,layer_Sedesdistritais_15]);
+            resetLabels([layer_Munic_Sist_BanabuiuSertaoCentral_limites2019_0,layer_Captao_4,layer_Obras_5,layer_ETA_6,layer_desvios_7]);
         });
         </script>
     </body>
